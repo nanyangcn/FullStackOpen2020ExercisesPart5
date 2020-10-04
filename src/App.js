@@ -112,6 +112,7 @@ const App = () => {
                 <td>username:</td>
                 <td>
                   <input
+                    id='username'
                     type='text'
                     name='username'
                     value={username}
@@ -123,6 +124,7 @@ const App = () => {
                 <td>password:</td>
                 <td>
                   <input
+                    id='password'
                     type='password'
                     name='password'
                     value={password}
@@ -132,7 +134,9 @@ const App = () => {
               </tr>
             </tbody>
           </table>
-          <button type='submit'>login</button>
+          <button id='loginButton' type='submit'>
+            login
+          </button>
         </form>
       </div>
     )
@@ -151,7 +155,9 @@ const App = () => {
       <div>
         <h2>blogs</h2>
         {user.name} logged in
-        <button onClick={handleLogout}>log out</button>
+        <button id='logoutButton' onClick={handleLogout}>
+          log out
+        </button>
         <Toggle buttonLabel={'new blog'} ref={createBlogRef}>
           <CreateBlogForm
             title={title}

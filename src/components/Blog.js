@@ -31,18 +31,23 @@ const Blog = ({ user, blog, handleLikeClick, handleRemoveClick }) => {
       <div style={blogStyle} className='blog'>
         <div>
           {blog.title} {blog.author}
-          <button onClick={handleViewClick}>{view}</button>
+          <button id='viewButton' onClick={handleViewClick}>
+            {view}
+          </button>
         </div>
         <div style={{ display: view === 'view' ? 'none' : '' }}>
           <p>
             Url: <a href={blog.url}>{blog.url}</a>
           </p>
           <p>
-            Likes: {blog.likes}{' '}
-            <button onClick={() => handleLikeClick(blog)}>like</button>
+            Likes: <span className='likes'>{blog.likes}</span>
+            <button id='likeButton' onClick={() => handleLikeClick(blog)}>
+              like
+            </button>
           </p>
           <p>Creator: {blog.user.username}</p>
           <button
+            id='removeButton'
             style={removeButtonStyle}
             onClick={() => handleRemoveClick(blog)}
           >
